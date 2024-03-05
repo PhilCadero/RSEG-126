@@ -1,0 +1,40 @@
+<project name="Assignment 4: Build">
+    <echo message="Executing Ant Build XML File"/>
+    <property name="main-class" value="App"/>
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="jar.dir" value="jar"/>
+    <property name="jar.name" value="App.jar"/>
+    
+    <target name="compile">
+    <echo message="Compiling the Java Source Code"/>
+    <presetdef name="javac">
+    <javac includeantruntime="false" />
+    </presetdef>
+    <javac srcdir="src" destdir="build"/>
+    </target>
+
+    <target name="jar" depends="compile">
+    <echo message="Creating the JAR File"/>
+    <mkdir dir="${jar.dir}"/>
+    <jar destfile="${jar.dir}/${jar.name}" basedir="${build.dir}">
+    <manifest>
+    <attribute name="Main-Class" value="${main-class}"/>
+    </manifest>
+    </jar>
+    </target>
+
+    <target name="run" depends="jar">
+    <echo message="Running the JAR File"/>
+    <java jar="${jar.dir}/${jar.name}" fork="true"/>
+    </target>
+
+    <target name="clean">
+    <echo message="Cleaning-up the Build and Jar Directories"/>
+    <delete file="${build.dir}\App.class"/>
+    <!-- <delete dir="${build.dir}\App.class"/> -->
+    <delete file="${jar.dir}\App.jar"/>
+    <!-- <delete dir="${jar.dir}\App.jar"/> -->
+    </target>
+
+</project>
