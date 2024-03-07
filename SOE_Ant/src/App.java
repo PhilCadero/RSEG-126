@@ -10,7 +10,11 @@ public class App {
         
         Scanner input = new Scanner(System.in);
         System.out.println("\nWelcome to My Sieve of Erastosthenes.  Enter a maximum integer for the upper limit: ");
-        int max = input.nextInt();
+
+        // int max = input.nextInt();
+        int max = 100;
+        System.out.println("100");
+
         input.close();
 
         System.out.println("\nThe prime numbers less than or equal to the value of " + max + " are as follows: \n");
