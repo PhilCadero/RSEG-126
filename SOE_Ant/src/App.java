@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
-        System.out.println("\nWelcome to My Sieve of Erastosthenes.  Enter a maximum integer for the upper limit: ");
+        System.out.println("\nWelcome to THE Sieve of Erastosthenes.  Enter a maximum integer for the upper limit: ");
 
         // int max = input.nextInt();
         int max = 100;
