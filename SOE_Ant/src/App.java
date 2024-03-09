@@ -1,4 +1,7 @@
-// Java App - Sieve of Erastostenes
+//Sieve of Erastostenes Java App
+
+package RSEG_126.SieveOfErastosthenes;
+
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,34 +12,32 @@ public class App {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
-        System.out.println("\nWelcome to My Special Sieve of Erastosthenes.  Enter a maximum integer for the upper limit: ");
-
-        // int max = input.nextInt();
-        int max = 100;
-        System.out.println("100");
-
+        System.out.print("\nWelcome to the Sieve of Erastosthenes...\n");
+        System.out.print("Enter a number for the upper limit: ");
+        int n = input.nextInt();
         input.close();
 
-        System.out.println("\nThe prime numbers less than or equal to the value of " + max + " are as follows: \n");
-        sieveE(max);
-        System.out.println("\n\nThank you for playing.");
+        System.out.print("\nThe prime numbers that are less than or equal to the value of ");
+        System.out.println(n + " are as follows:\n ");
+        sieveE(n);
+        System.out.println("\n\n");
     }
                
-    static void sieveE(int max) {
+    static void sieveE(int n) {
 
-        boolean sieve[] = new boolean[max+1];
-        for(int i = 0; i < max; i++)
-        sieve[i] = true;
+        boolean sievePrime[] = new boolean[n+1];
+        for(int i = 0; i < n; i++)
+        sievePrime[i] = true;
         
-        for(int x = 2; x*x <= max; x++) {
-            if(sieve[x] == true) {
-                for(int i = x*x; i <= max; i += x)
-                sieve[i] = false;
+        for(int x = 2; x*x <= n; x++) {
+            if(sievePrime[x] == true) {
+                for(int i = x*x; i <= n; i += x)
+                sievePrime[i] = false;
             }
         }
         
-        for(int i = 2; i <= max; i++) {
-            if(sieve[i] == true)
+        for(int i = 2; i <= n; i++) {
+            if(sievePrime[i] == true)
             System.out.print(i + ", ");
         }
     }
