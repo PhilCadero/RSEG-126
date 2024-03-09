@@ -12,9 +12,13 @@ public class App {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
-        System.out.print("\nWelcome to the Sieve of Erastosthenes...\n");
+        System.out.print("\nWelcome to MY UPDATED Sieve of Erastosthenes...\n");
+        
         System.out.print("Enter a number for the upper limit: ");
-        int n = input.nextInt();
+
+        int n = 100;
+        System.out.print("n");
+        // int n = input.nextInt();
         input.close();
 
         System.out.print("\nThe prime numbers that are less than or equal to the value of ");
